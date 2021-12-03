@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pash2048/docker-nodejs/issues"
   },
-  "homepage": "https://github.com/pash2048/docker-nodejs#readme"
+  "homepage": "https://github.com/pash2048/docker-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^4.0.0"
+  }
 }
