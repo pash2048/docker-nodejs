@@ -10,20 +10,18 @@ const client = redis.createClient({
     port: REDIS_PORT
 });
 
-client.on('connect', function () {
-    console.log('Connected to redis server!');
-});
 client.on('error', err => {
     console.log('Error ON redis connection' + err);
     process.exit(1);
 });
 
 app.get('/', async (req, res) => {
+    await client.connect();
     let name = await client.get('name');
     res.send(`Hello ${name}! \n`);
+    client.disconnect();
 })
 
 app.listen(port, async () => {
-    await client.connect();
     console.log(`Example app listening at http://localhost:${port}`);
 })
