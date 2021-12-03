@@ -1,0 +1,19 @@
+{
+  "name": "docker-test-for-uni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pash2048/docker-nodejs.git"
+  },
+  "author": "Javad Jazandari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pash2048/docker-nodejs/issues"
+  },
+  "homepage": "https://github.com/pash2048/docker-nodejs#readme"
+}
