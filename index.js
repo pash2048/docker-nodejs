@@ -1,13 +1,11 @@
 const express = require('express');
 const redis = require('redis');
 const app = express();
-const port = 3000;
-const REDIS_HOST = "127.0.0.1";
-const REDIS_PORT = '6379';
+const port = 8080;
+const REDIS_URL = "redis://some-redis:6379";
 
 const client = redis.createClient({
-    host: REDIS_HOST,
-    port: REDIS_PORT
+    url : REDIS_URL
 });
 
 client.on('error', err => {
@@ -25,3 +23,8 @@ app.get('/', async (req, res) => {
 app.listen(port, async () => {
     console.log(`Example app listening at http://localhost:${port}`);
 })
+
+process.on('SIGINT', function () {
+    console.log("Caught interrupt signal");
+    process.exit();
+});
